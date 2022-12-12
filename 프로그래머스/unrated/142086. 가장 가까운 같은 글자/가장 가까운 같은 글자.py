@@ -1,8 +1,6 @@
-from collections import deque
-
 def solution(s):
     answer = []
-    _list = deque()
+    _list = []
     flag = True
 
     for i in range(len(s)):
