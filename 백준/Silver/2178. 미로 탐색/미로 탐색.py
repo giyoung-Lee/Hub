@@ -1,10 +1,9 @@
 from collections import deque
 
-n, m = map(int, input().split())
-graph = [list(map(int, input())) for _ in range(n)]
+a, b = map(int, input().split())
+arr = [list(map(int, input())) for _ in range(a)]
 
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
+dx, dy = [1, -1, 0, 0], [0, 0, 1, -1]
 
 def bfs(x, y):
     q = deque()
@@ -17,17 +16,17 @@ def bfs(x, y):
             nx = x + dx[i]
             ny = y + dy[i]
 
-            if nx < 0 or nx >= n or ny < 0 or ny >= m:
+            if nx >= a or nx < 0 or ny >= b or ny < 0:
                 continue
 
-            if graph[nx][ny] == 0:
+            if arr[nx][ny] == 0:
                 continue
 
-            if graph[nx][ny] == 1:
-                graph[nx][ny] = graph[x][y] + 1
+            if arr[nx][ny] == 1:
+                arr[nx][ny] = arr[x][y] + 1
                 q.append((nx, ny))
 
-    return graph[n-1][m-1]
+    return arr[a-1][b-1]
 
 
 print(bfs(0, 0))
