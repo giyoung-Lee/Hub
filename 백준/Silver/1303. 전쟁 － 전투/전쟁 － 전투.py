@@ -1,7 +1,6 @@
 a, b = map(int, input().split())
 
 arr = [list(map(str, input())) for _ in range(b)]
-visited = [[False] * a for _ in range(b)]
 
 dx, dy = [1, -1, 0, 0], [0, 0, 1, -1]
 
