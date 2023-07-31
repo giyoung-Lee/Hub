@@ -21,11 +21,11 @@ public class Main {
             graph[y].add(x);
         }
 
-        int result = countInfectedComputers(graph, 1);
+        int result = bfs(graph, 1);
         System.out.println(result);
     }
 
-    private static int countInfectedComputers(ArrayList<Integer>[] graph, int start) {
+    public static int bfs(ArrayList<Integer>[] graph, int start) {
         boolean[] visited = new boolean[graph.length];
         Queue<Integer> queue = new LinkedList<>();
         queue.add(start);
@@ -44,8 +44,6 @@ public class Main {
             }
         }
 
-        return count - 1; // Exclude the starting computer (1번 컴퓨터)
+        return count - 1; // 1번 컴퓨터 빼주기
     }
 }
-
-
