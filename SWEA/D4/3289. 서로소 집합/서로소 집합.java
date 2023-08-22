@@ -54,7 +54,8 @@ public class Solution {
 			
 			N = Integer.parseInt(st.nextToken());
 			M = Integer.parseInt(st.nextToken());
-			String answer = "";
+			StringBuilder sb = new StringBuilder();
+			sb.append("#"+test+" ");
 			make();
 			
 			for(int i = 0; i < M; i++) {
@@ -67,14 +68,14 @@ public class Solution {
 					union(a, b);
 				} else {
 					if (find(a) == find(b)) {
-						answer +="1";
+						sb.append("1");
 					} else {
-						answer +="0";
+						sb.append("0");
 					}
 				}
 				
 			}
-			System.out.println("#"+test + " "  + answer);
+			System.out.println(sb);
 		}
 	}
 }
