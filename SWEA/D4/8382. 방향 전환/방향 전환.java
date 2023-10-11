@@ -21,21 +21,15 @@ public class Solution {
 			int dx = Math.abs(x1 - x2);
 			int dy = Math.abs(y1 - y2);
 
-			int min = Math.min(dx, dy);
-			int diff = Math.abs(dx - dy);
-			
-			int temp = 0;
-			while(diff > 0) {
-				if (diff %2 == 1) {
-					temp += 1;
-					diff--;
+			int result = (dx + dy);
+
+			if (dx != dy) {
+				if (result % 2 == 1) {
+					result = result + (Math.abs(dx-dy) - 1);
 				} else {
-					temp += 3;
-					diff--;
+					result += Math.abs(dx-dy);
 				}
 			}
-
-			int result = min * 2 + temp;
 			System.out.println("#" + test + " " + result);
 		}
 
