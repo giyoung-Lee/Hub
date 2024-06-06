@@ -16,7 +16,6 @@ def print_primes_in_range(M, N):
     if M > N:
         return
     primes = sieve_of_eratosthenes(N)
-    list_ = []
     for prime in primes:
         if prime >= M:
             print(prime)
